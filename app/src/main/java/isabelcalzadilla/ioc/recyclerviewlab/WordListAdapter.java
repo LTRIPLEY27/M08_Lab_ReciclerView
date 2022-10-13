@@ -47,7 +47,8 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
 
             String element = mWordList.get(position);
 
-            mWordList.set(position, "Got You" + element);
+            // INDICAMOS DE QUE EN CASO DE QUE SEA PULSADO, NOS INDIQUE LA LEYENDA DE QUE LES GUSTA
+            mWordList.set(position, element + "  I LOVE IT");
 
             mAdapter.notifyDataSetChanged();
         }

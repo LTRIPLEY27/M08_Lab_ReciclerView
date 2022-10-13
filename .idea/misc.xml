@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/ISABE/AndroidStudioProjects/RecyclerViewLab/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/ISABE/AndroidStudioProjects/RecyclerViewLab/app/src/main/res/drawable-anydpi/ic_add_for_fab.xml" value="0.2235" />
+        <entry key="..\:/Users/ISABE/AndroidStudioProjects/RecyclerViewLab/app/src/main/res/drawable-anydpi/ic_add_for_reset.xml" value="0.2235" />
+        <entry key="..\:/Users/ISABE/AndroidStudioProjects/RecyclerViewLab/app/src/main/res/drawable-anydpi/ic_add_for_reset_text.xml" value="0.244" />
+        <entry key="..\:/Users/ISABE/AndroidStudioProjects/RecyclerViewLab/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/ISABE/AndroidStudioProjects/RecyclerViewLab/app/src/main/res/layout/content_main.xml" value="0.25" />
         <entry key="..\:/Users/ISABE/AndroidStudioProjects/RecyclerViewLab/app/src/main/res/layout/fragment_first.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/ISABE/AndroidStudioProjects/RecyclerViewLab/app/src/main/res/layout/fragment_second.xml" value="0.18854166666666666" />

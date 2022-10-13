@@ -20,8 +20,32 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+    <!--LLAMADO AL CONTENIDO DEL CONTAINT_MAIN-->
     <include layout="@layout/content_main" />
 
+    <TextView
+        android:id="@+id/title"
+        android:text="Choice your prefer Heroe"
+        android:textStyle="bold"
+        android:textColor="@color/teal_700"
+        android:textSize="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <!--FLOATING BUTTOM PARA AGREGAR UN NUEVO ELEMENTO-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/reset"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginBottom="600dp"
+        app:layout_anchor="@+id/floating"
+        app:layout_anchorGravity="center"
+        app:srcCompat="@drawable/ic_add_for_reset" />
+
+    <!--FLOATING BUTTOM PARA RESETTEAR LA LISTA Y REHACERLA COMO DESEE-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floating"
         android:layout_width="wrap_content"

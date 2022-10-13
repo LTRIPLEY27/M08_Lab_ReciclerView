@@ -24,6 +24,7 @@ import android.view.MenuItem;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -31,10 +32,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     // LISTA INICIAL DE PERSONAJES
     private List<String> lista = Arrays.asList("Superman", "Batman", "WonderWoman", "Aquaman", "Hulk", "Doctor Dooom", "SpiderMan", "Thor", "Joker", "Captain America", "Lex Luthor", "Wolverine", "Iron Man", "Flash", "HellBoy", "DeadPool", "Storm", "Punisher", "CatWoman", "Two Faces");
-    private final LinkedList <String> mWordList = new LinkedList<>();
+    private LinkedList <String> mWordList = new LinkedList<>();
     private RecyclerView recicler;
     private WordListAdapter adapter;
     private FloatingActionButton floater;
+    private FloatingActionButton reset;
     // DEFAULT ELEMENTS
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
@@ -56,8 +58,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         adapter = new WordListAdapter(this, mWordList);
         recicler.setAdapter(adapter);
         recicler.setLayoutManager(new LinearLayoutManager(this));
+
+        // BUTTOMS LISTENERS
         floater = findViewById(R.id.floating);
         floater.setOnClickListener(this);
+        reset = findViewById(R.id.reset);
+        reset.setOnClickListener(this);
     }
 
     @Override
@@ -80,12 +86,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        int longitude = mWordList.size();
 
-        mWordList.addFirst("New SuperHero Add" + longitude);
+        switch (view.getId()){
+            case R.id.reset :
+                mWordList.clear();
+                recicler = findViewById(R.id.reciclerView);
+                adapter = new WordListAdapter(this, mWordList);
+                recicler.setAdapter(adapter);
+                recicler.setLayoutManager(new LinearLayoutManager(this));
+                break;
+            case R.id.floating :
+                int longitude = mWordList.size();
 
-        recicler.getAdapter().notifyItemInserted(longitude);
+                // GENERAMOS NÚMEROS AL AZAR PARA QUE AL PULSAR NOS AGREGUE CUALQUIER SUPER HEROE DE LA LISTA
+                String neo = mWordList.get(new Random().nextInt(20));
+                mWordList.addLast(neo);
 
-        recicler.smoothScrollToPosition(longitude);
+                recicler.getAdapter().notifyItemInserted(longitude);
+
+                recicler.smoothScrollToPosition(longitude);
+                break;
+        }
+
     }
 }
