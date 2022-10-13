@@ -59,7 +59,8 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
     // RETORNA LA DIMENSIÓN DEL LINKEDLIST
     @Override
     public int getItemCount() {
-        return mWordList.size();
+
+        return mWordList.size() + 1;
     } // 'EL CECICLER VIEW ES GENÉRICO
 
 
