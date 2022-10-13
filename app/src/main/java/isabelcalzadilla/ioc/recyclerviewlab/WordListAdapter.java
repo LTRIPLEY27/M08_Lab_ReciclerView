@@ -25,7 +25,7 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
 
     //CLASE INTERNA PAA EL WORDVIEWHOLDER
     // CONSTRUCTOR POR DEFECTO PARA LA CLASE INTERNA
-    class WordViewHolder extends RecyclerView.ViewHolder{
+    class WordViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         public final TextView wordItemView;
         final WordListAdapter mAdapter;
 
@@ -35,8 +35,24 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
             // recepción de los parámetros compuestos por el TextView de la lista de items
             wordItemView = itemView.findViewById(R.id.word);
             this.mAdapter = adapter;
+
+            //LLAMADO AL ONCLICK LISTENER
+            itemView.setOnClickListener(this);
+        }
+
+        // EVENTO ONCLICK DEL VIWHOLDER
+        @Override
+        public void onClick(View view) {
+            int position = getLayoutPosition();
+
+            String element = mWordList.get(position);
+
+            mWordList.set(position, "Got You" + element);
+
+            mAdapter.notifyDataSetChanged();
         }
     }
+
 
     //METODOS PREDEFINIDOS POR ANDROID STUDIO PARA LA VIEW HOLDER
     @NonNull
@@ -60,7 +76,7 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
     @Override
     public int getItemCount() {
 
-        return mWordList.size() + 1;
+        return mWordList.size();
     } // 'EL CECICLER VIEW ES GENÉRICO
 
 
