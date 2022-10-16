@@ -14,7 +14,6 @@ import java.util.LinkedList;
 // DECLARACIÓN DEL ADAPTADOR DE LA WORDLIST CON LOS VALORES DETERMINADOS DESDE EL LAB
 public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordViewHolder> {
 
-    //
     private final LinkedList <String> mWordList;
     private LayoutInflater mInflater;
 
@@ -48,7 +47,7 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
             String element = mWordList.get(position);
 
             // INDICAMOS DE QUE EN CASO DE QUE SEA PULSADO, NOS INDIQUE LA LEYENDA DE QUE LES GUSTA
-            mWordList.set(position, element + "  I LOVE IT");
+            mWordList.set(position, element  +  "    I LOVE IT");
 
             mAdapter.notifyDataSetChanged();
         }

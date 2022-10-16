@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     // LISTA INICIAL DE PERSONAJES
     private List<String> lista = Arrays.asList("Superman", "Batman", "WonderWoman", "Aquaman", "Hulk", "Doctor Dooom", "SpiderMan", "Thor", "Joker", "Captain America", "Lex Luthor", "Wolverine", "Iron Man", "Flash", "HellBoy", "DeadPool", "Storm", "Punisher", "CatWoman", "Two Faces");
-    private LinkedList <String> mWordList = new LinkedList<>();
+    private LinkedList <String> mWordList;
     private RecyclerView recicler;
     private WordListAdapter adapter;
     private FloatingActionButton floater;
@@ -50,22 +50,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         setSupportActionBar(binding.toolbar);
 
-        // ADICIÓN DEL BLOQUE DE CÓDIGO DEL CODELAB (LINKEDLIST SECTION)
-
-        mWordList.addAll(lista);
-
-        recicler = findViewById(R.id.reciclerView);
-        adapter = new WordListAdapter(this, mWordList);
-        recicler.setAdapter(adapter);
-        recicler.setLayoutManager(new LinearLayoutManager(this));
-
-        // BUTTOMS LISTENERS
-        floater = findViewById(R.id.floating);
-        floater.setOnClickListener(this);
-        reset = findViewById(R.id.reset);
-        reset.setOnClickListener(this);
+        starting();
     }
 
+    // MÉTODOS PROPIOS DE LA ACTIVITY
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -84,26 +72,39 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return super.onOptionsItemSelected(item);
     }
 
+    void starting(){
+       // declaración de la linkedlist e inserción de la lista de superhéroes
+        mWordList = new LinkedList<>(lista);
+
+        recicler = findViewById(R.id.reciclerView);
+        adapter = new WordListAdapter(this, mWordList);
+        recicler.setAdapter(adapter);
+        recicler.setLayoutManager(new LinearLayoutManager(this));
+
+        // BUTTOMS LISTENERS
+        floater = findViewById(R.id.floating);
+        floater.setOnClickListener(this);
+        reset = findViewById(R.id.reset);
+        reset.setOnClickListener(this);
+    }
+
+    // método on click para disparar la acción
     @Override
     public void onClick(View view) {
 
         switch (view.getId()){
             case R.id.reset :
-                mWordList.clear();
-                recicler = findViewById(R.id.reciclerView);
-                adapter = new WordListAdapter(this, mWordList);
-                recicler.setAdapter(adapter);
-                recicler.setLayoutManager(new LinearLayoutManager(this));
+                // EN CASO DE PREIONAR EL BUTTON RESET NOS INICIALIZA LA APP DESDE CERO
+                starting();
                 break;
             case R.id.floating :
-                int longitude = mWordList.size();
 
+                int longitude = mWordList.size();
                 // GENERAMOS NÚMEROS AL AZAR PARA QUE AL PULSAR NOS AGREGUE CUALQUIER SUPER HEROE DE LA LISTA
                 String neo = mWordList.get(new Random().nextInt(20));
                 mWordList.addLast(neo);
 
                 recicler.getAdapter().notifyItemInserted(longitude);
-
                 recicler.smoothScrollToPosition(longitude);
                 break;
         }
