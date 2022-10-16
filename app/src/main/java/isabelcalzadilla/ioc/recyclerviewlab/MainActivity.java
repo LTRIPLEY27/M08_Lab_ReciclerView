@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // LAB SECTION
 
     // LISTA INICIAL DE PERSONAJES
-    private List<String> lista = Arrays.asList("Superman", "Batman", "WonderWoman", "Aquaman", "Hulk", "Doctor Dooom", "SpiderMan", "Thor", "Joker", "Captain America", "Lex Luthor", "Wolverine", "Iron Man", "Flash", "HellBoy", "DeadPool", "Storm", "Punisher", "CatWoman", "Two Faces");
+    private List<String> lista = Arrays.asList("Philip J Fry", "Turanga Leela", "John A. Zoidberg", "Bender Doblador Rodríguez", "Profesor Hubert J. Farnsworth", "Dra. Amy Wong", "Hermes Conrad", "Zapp Brannigan", "Beelzebot", "Scruffy", "Nixon", "Seymour III", "Morbo", "Hipnosapo", "Robot Hedonista", "Calculon", "Mafia Robot", "Globetrotters", "Nibbler", "Abogada Soltera");
     private LinkedList <String> mWordList;
     private RecyclerView recicler;
     private WordListAdapter adapter;
