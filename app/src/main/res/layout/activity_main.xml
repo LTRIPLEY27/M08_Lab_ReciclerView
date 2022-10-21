@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- *******    TASK 1 : CREACIÓN DEL LAYOUT  *******-->
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,22 +19,18 @@
             android:background="@color/teal_200"
             app:popupTheme="@style/Theme.RecyclerViewLab.PopupOverlay" />
 
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <!--LLAMADO AL CONTENIDO DEL CONTAINT_MAIN-->
-    <include layout="@layout/content_main" />
-
-    <TextView
-        android:id="@+id/title"
-        android:text="Choice your prefer Heroe"
-        android:textStyle="bold"
-        android:textColor="@color/teal_700"
-        android:textSize="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
 
     <!--FLOATING BUTTOM PARA AGREGAR UN NUEVO ELEMENTO-->
+
+    <include
+        layout="@layout/content_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/reset"
         android:layout_width="wrap_content"

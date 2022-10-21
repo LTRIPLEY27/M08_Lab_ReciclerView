@@ -10,18 +10,22 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.LinkedList;
-
+//*******    TASK 2.4 : CREACIÓN DEL PARA ENLAZAR LOS DATOS CON LA VISTA  *******
 // DECLARACIÓN DEL ADAPTADOR DE LA WORDLIST CON LOS VALORES DETERMINADOS DESDE EL LAB
 public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordViewHolder> {
 
     private final LinkedList <String> mWordList;
     private LayoutInflater mInflater;
 
+
+    // CONSTRUCTOR DEL ADAPTADOR
     public WordListAdapter(Context context, LinkedList<String> mWordList) {
         mInflater = LayoutInflater.from(context);
         this.mWordList = mWordList;
     }
 
+
+    //*******    TASK 2.5 : IMPLEMENTACIÓN DEL VIEWHOLDER *******
     //CLASE INTERNA PAA EL WORDVIEWHOLDER
     // CONSTRUCTOR POR DEFECTO PARA LA CLASE INTERNA
     class WordViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
@@ -39,6 +43,7 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
             itemView.setOnClickListener(this);
         }
 
+    //*******    TASK 3: EVENTO ON CLICK PARA ADICIONAR ELEMENTOS *******
         // EVENTO ONCLICK DEL VIWHOLDER
         @Override
         public void onClick(View view) {

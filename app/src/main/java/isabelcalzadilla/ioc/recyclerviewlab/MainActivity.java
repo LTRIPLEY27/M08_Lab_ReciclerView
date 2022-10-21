@@ -26,6 +26,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
+//*******    TASK 1 : CREACIÓN DEL ACTIVITY MAIN PARA INICIALIZAR LOS VALORES  *******
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     // LAB SECTION
@@ -33,6 +34,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // LISTA INICIAL DE PERSONAJES
     private List<String> lista = Arrays.asList("Philip J Fry", "Turanga Leela", "John A. Zoidberg", "Bender Doblador Rodríguez", "Profesor Hubert J. Farnsworth", "Dra. Amy Wong", "Hermes Conrad", "Zapp Brannigan", "Beelzebot", "Scruffy", "Nixon", "Seymour III", "Morbo", "Hipnosapo", "Robot Hedonista", "Calculon", "Mafia Robot", "Globetrotters", "Nibbler", "Abogada Soltera");
     private LinkedList <String> mWordList;
+
+    // CREACIÓN DE LAS VARIABLES DEL ADAPTADOR, RECYCLER Y BUTTONS
     private RecyclerView recicler;
     private WordListAdapter adapter;
     private FloatingActionButton floater;
@@ -88,6 +91,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         reset.setOnClickListener(this);
     }
 
+    //*******    TASK 3.2 : INDICACIÓN DE ACCIONES EN LOS BOTONES FLOTANTES  *******
     // método on click para disparar la acción
     @Override
     public void onClick(View view) {
